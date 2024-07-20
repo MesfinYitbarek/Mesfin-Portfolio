@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaJs, FaReact, FaNodeJs, FaDatabase, FaHtml5, FaCss3 } from 'react-icons/fa';
-import { SiExpress, SiMongodb, SiTailwindcss, SiRedux, SiTypescript, SiGraphql } from 'react-icons/si';
+import { FaJs, FaReact, FaNodeJs, FaDatabase, FaHtml5, FaCss3, FaJava, FaPhp } from 'react-icons/fa';
+import { SiExpress, SiMongodb, SiTailwindcss, SiRedux, SiTypescript, SiGraphql, SiMysql, SiFirebase } from 'react-icons/si';
 
 const skillsList = [
   { name: 'JavaScript', icon: FaJs, color: '#F7DF1E' },
@@ -15,6 +15,10 @@ const skillsList = [
   { name: 'Redux', icon: SiRedux, color: '#764ABC' },
   { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
   { name: 'GraphQL', icon: SiGraphql, color: '#E10098' },
+  { name: 'Java', icon: FaJava, color: '#007396' },
+  { name: 'PHP', icon: FaPhp, color: '#777BB4' },
+  { name: 'MySQL', icon: SiMysql, color: '#4479A1' },
+  { name: 'Firebase', icon: SiFirebase, color: '#FFCA28' },
 ];
 
 const Skills = () => {
@@ -45,9 +49,9 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-4xl font-bold text-center mb-12 text-gray-800"
+          className="text-4xl font-extrabold text-center mb-12 text-gray-800 font-sans"
         >
-          My Skills
+          My Skills.
         </motion.h2>
         <motion.div
           variants={containerVariants}

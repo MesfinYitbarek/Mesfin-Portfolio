@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaHome, FaUser, FaCog, FaProjectDiagram, FaEnvelope, FaCode } from 'react-icons/fa';
+import { FaHome, FaUser, FaCog, FaProjectDiagram, FaEnvelope, FaLaptopCode } from 'react-icons/fa';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const menuItems = [
     { icon: FaHome, text: 'Home', href: '#home' },
@@ -11,7 +13,31 @@ const Header = () => {
     { icon: FaCog, text: 'Skills', href: '#skills' },
     { icon: FaProjectDiagram, text: 'Projects', href: '#projects' },
     { icon: FaEnvelope, text: 'Contact', href: '#contact' },
+
   ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = menuItems.map(item => item.href.slice(1));
+      const currentSection = sections.find(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
+        }
+        return false;
+      });
+      if (currentSection) {
+        setActiveSection(currentSection);
+      }
+
+      // Check if scrolled past the home section
+      setIsScrolled(window.scrollY > window.innerHeight * 0.8);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const headerVariants = {
     hidden: { y: -100 },
@@ -39,12 +65,21 @@ const Header = () => {
     }
   };
 
+  const underlineVariants = {
+    initial: { width: 0 },
+    animate: { width: '100%', transition: { duration: 0.5 } },
+  };
+
   return (
     <motion.header
       variants={headerVariants}
       initial="hidden"
       animate="visible"
-      className="px-10 bg-gradient-to-br from-indigo-900 via-blue-900 to-indigo-900 fixed w-full z-10"
+      className={`px-10 fixed w-full z-10 transition-all duration-300 ${
+        isScrolled
+          ? 'bg-gradient-to-br from-indigo-900 via-blue-900 to-indigo-900 shadow-lg'
+          : 'bg-transparent py-4'
+      }`}
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
@@ -57,23 +92,36 @@ const Header = () => {
               animate={{ rotate: 360 }}
               transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
             >
-              <FaCode className="text-3xl" />
+              <FaLaptopCode className="text-3xl" />
             </motion.div>
             <span className="text-2xl font-bold">Mesfin Y.</span>
           </motion.div>
           <div className="hidden md:flex space-x-6">
             {menuItems.map((item, index) => (
-              <motion.a
+              <motion.div
                 key={index}
-                href={item.href}
-                className="text-white hover:text-yellow-300 flex items-center transition duration-300"
-                whileHover={{ scale: 1.1, y: -5 }}
+                className="relative"
+                whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                variants={menuItemVariants}
               >
-                <item.icon className="mr-2" />
-                {item.text}
-              </motion.a>
+                <motion.a
+                  href={item.href}
+                  className={`text-white hover:text-yellow-300 flex items-center transition duration-300 ${activeSection === item.href.slice(1) ? 'text-yellow-300' : ''}`}
+                  variants={menuItemVariants}
+                >
+                  <item.icon className="mr-2" />
+                  {item.text}
+                </motion.a>
+                {activeSection === item.href.slice(1) && (
+                  <motion.div
+                    className="absolute bottom-0 left-0 h-0.5 bg-yellow-300"
+                    layoutId="underline"
+                    initial="initial"
+                    animate="animate"
+                    variants={underlineVariants}
+                  />
+                )}
+              </motion.div>
             ))}
           </div>
           <div className="md:hidden">
@@ -103,7 +151,7 @@ const Header = () => {
               <motion.a
                 key={index}
                 href={item.href}
-                className="block py-3 px-4 text-gray-800 hover:bg-blue-100 transition duration-300"
+                className={`block py-3 px-4 text-gray-800 hover:bg-blue-100 transition duration-300 ${activeSection === item.href.slice(1) ? 'bg-blue-100' : ''}`}
                 onClick={() => setIsOpen(false)}
                 whileHover={{ x: 5, backgroundColor: '#EBF8FF' }}
                 variants={menuItemVariants}

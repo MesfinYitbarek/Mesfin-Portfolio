@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
   return (
@@ -23,13 +24,15 @@ const Footer = () => {
             className="flex space-x-4"
           >
             {[
-              { Icon: FaGithub, href: '#', label: 'GitHub' },
-              { Icon: FaLinkedin, href: '#', label: 'LinkedIn' },
-              { Icon: FaTwitter, href: '#', label: 'Twitter' },
+              { Icon: FaGithub, href: 'https://github.com/MesfinYitbarek', label: 'GitHub' },
+              { Icon: FaLinkedin, href: 'https://et.linkedin.com/in/mesfin-yitbarek-739550287', label: 'LinkedIn' },
+              { Icon: FaXTwitter, href: 'https://x.com/MesfinYitb65337?t=U5nJQy6l3063eJS-wmKjjg&s=35', label: 'Twitter' },
             ].map(({ Icon, href, label }, index) => (
               <motion.a
                 key={index}
                 href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={label}
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.8 }}

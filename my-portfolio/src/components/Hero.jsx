@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaTwitter, FaReact, FaNodeJs, FaDatabase, FaCode } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaReact, FaNodeJs, FaDatabase, FaCode } from 'react-icons/fa';
 import { SiMongodb, SiExpress, SiJavascript, SiHtml5, SiCss3 } from 'react-icons/si';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const Hero = () => {
   const particleVariants = {
@@ -105,18 +106,39 @@ const Hero = () => {
           transition={{ delay: 0.8 }}
           className="mt-12 flex justify-center space-x-8"
         >
-          {[FaGithub, FaLinkedin, FaTwitter].map((Icon, index) => (
-            <motion.a
-              key={index}
-              href="#"
-              className="text-white hover:text-blue-300 bg-white bg-opacity-20 p-4 rounded-full"
-              whileHover={{ scale: 1.2, rotate: 360, backgroundColor: 'rgba(255,255,255,0.3)' }}
-              whileTap={{ scale: 0.8 }}
-              transition={{ type: 'spring', stiffness: 300 }}
-            >
-              <Icon size={28} />
-            </motion.a>
-          ))}
+          <motion.a
+            href="https://github.com/MesfinYitbarek"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-blue-300 bg-white bg-opacity-20 p-4 rounded-full"
+            whileHover={{ scale: 1.2, rotate: 360, backgroundColor: 'rgba(255,255,255,0.3)' }}
+            whileTap={{ scale: 0.8 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+          >
+            <FaGithub size={28} />
+          </motion.a>
+          <motion.a
+            href="https://et.linkedin.com/in/mesfin-yitbarek-739550287"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-blue-300 bg-white bg-opacity-20 p-4 rounded-full"
+            whileHover={{ scale: 1.2, rotate: 360, backgroundColor: 'rgba(255,255,255,0.3)' }}
+            whileTap={{ scale: 0.8 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+          >
+            <FaLinkedin size={28} />
+          </motion.a>
+          <motion.a
+            href="https://x.com/MesfinYitb65337?t=U5nJQy6l3063eJS-wmKjjg&s=35"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-blue-300 bg-white bg-opacity-20 p-4 rounded-full"
+            whileHover={{ scale: 1.2, rotate: 360, backgroundColor: 'rgba(255,255,255,0.3)' }}
+            whileTap={{ scale: 0.8 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+          >
+            <FaXTwitter size={28} />
+          </motion.a>
         </motion.div>
       </div>
       <style jsx>{`
