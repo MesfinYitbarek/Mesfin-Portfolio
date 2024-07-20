@@ -1,0 +1,136 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { FaGithub, FaLinkedin, FaTwitter, FaReact, FaNodeJs, FaDatabase, FaCode } from 'react-icons/fa';
+import { SiMongodb, SiExpress, SiJavascript, SiHtml5, SiCss3 } from 'react-icons/si';
+
+const Hero = () => {
+  const particleVariants = {
+    hidden: { opacity: 0, y: 100 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const professionVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const techIcons = [FaReact, FaNodeJs, SiMongodb, SiExpress, SiJavascript, SiHtml5, SiCss3, FaDatabase, FaCode];
+
+  return (
+    <section id="home" className="bg-gradient-to-br from-indigo-900 via-blue-900 to-purple-900 text-white py-32 relative overflow-hidden min-h-screen flex items-center">
+      <div className="absolute inset-0">
+        {[...Array(30)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute text-blue-200 opacity-10"
+            style={{
+              fontSize: Math.random() * 30 + 10 + 'px',
+              left: Math.random() * 100 + '%',
+              top: Math.random() * 100 + '%'
+            }}
+            variants={particleVariants}
+            initial="hidden"
+            animate="visible"
+            transition={{
+              delay: Math.random() * 2,
+              duration: Math.random() * 10 + 10,
+              repeat: Infinity,
+              repeatType: 'reverse'
+            }}
+          >
+            {React.createElement(techIcons[i % techIcons.length])}
+          </motion.div>
+        ))}
+      </div>
+      <div className="container mx-auto px-6 text-center relative z-10">
+        <motion.div
+          initial={{ scale: 0, rotate: -180 }}
+          animate={{ scale: 1, rotate: 0 }}
+          transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+          className="relative inline-block mb-8"
+        >
+          <img
+            src="../../public/20231010_114912.jpg"
+            alt="Mesfin Yitbarek"
+            className="w-48 h-48 rounded-full mx-auto border-4 border-white shadow-lg"
+          />
+          <motion.div
+            className="absolute inset-0 rounded-full"
+            animate={{
+              boxShadow: [
+                '0 0 0 0px rgba(255,255,255,0.4)',
+                '0 0 0 20px rgba(255,255,255,0)'
+              ]
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 1.5,
+              ease: 'easeInOut'
+            }}
+          />
+        </motion.div>
+        <motion.h1
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2, type: 'spring', stiffness: 100 }}
+          className="text-5xl font-extrabold mb-4 text-shadow-lg font-sans"
+        >
+          Mesfin Yitbarek
+        </motion.h1>
+        <motion.p
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.4, type: 'spring', stiffness: 100 }}
+          className="text-2xl mb-8 text-blue-100"
+        >
+          Full Stack Developer | MERN Stack Specialist
+        </motion.p>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+        >
+          <motion.a
+            href="#contact"
+            className="bg-white text-indigo-900 px-10 py-3 rounded-full font-bold text-xl hover:bg-blue-100 transition duration-300 shadow-lg inline-block"
+            whileHover={{ scale: 1.05, boxShadow: '0 0 15px rgba(255,255,255,0.5)' }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Get In Touch
+          </motion.a>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8 }}
+          className="mt-12 flex justify-center space-x-8"
+        >
+          {[FaGithub, FaLinkedin, FaTwitter].map((Icon, index) => (
+            <motion.a
+              key={index}
+              href="#"
+              className="text-white hover:text-blue-300 bg-white bg-opacity-20 p-4 rounded-full"
+              whileHover={{ scale: 1.2, rotate: 360, backgroundColor: 'rgba(255,255,255,0.3)' }}
+              whileTap={{ scale: 0.8 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
+              <Icon size={28} />
+            </motion.a>
+          ))}
+        </motion.div>
+      </div>
+      <style jsx>{`
+        @keyframes slide-down {
+          0%, 50% { transform: translateY(0); }
+          50%, 100% { transform: translateY(100%); }
+        }
+        @keyframes slide-up {
+          0%, 50% { transform: translateY(0); }
+          50%, 100% { transform: translateY(-100%); }
+        }
+      `}</style>
+    </section>
+  );
+};
+
+export default Hero;
