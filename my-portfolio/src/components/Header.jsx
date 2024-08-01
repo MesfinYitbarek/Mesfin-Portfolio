@@ -89,12 +89,12 @@ const Header = () => {
             className="flex items-center space-x-2 text-white"
           >
             <motion.div
-              animate={{ rotate: 360 }}
+              //animate={{ rotate: 360 }}
               transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
             >
-              <FaLaptopCode className="text-3xl" />
+              <FaLaptopCode className="text-2xl" />
             </motion.div>
-            <span className="text-2xl font-bold">Mesfin Y.</span>
+            <span className="text-2xl font-bold font-lato">MY.</span>
           </motion.div>
           <div className="hidden md:flex space-x-6">
             {menuItems.map((item, index) => (
@@ -106,10 +106,10 @@ const Header = () => {
               >
                 <motion.a
                   href={item.href}
-                  className={`text-white hover:text-yellow-300 flex items-center transition duration-300 ${activeSection === item.href.slice(1) ? 'text-yellow-300' : ''}`}
+                  className={`text-white hover:text-yellow-300 font-lato flex items-center transition duration-300 ${activeSection === item.href.slice(1) ? 'text-yellow-300' : ''}`}
                   variants={menuItemVariants}
                 >
-                  <item.icon className="mr-2" />
+                  
                   {item.text}
                 </motion.a>
                 {activeSection === item.href.slice(1) && (
@@ -151,7 +151,7 @@ const Header = () => {
               <motion.a
                 key={index}
                 href={item.href}
-                className={`block py-3 px-4 text-gray-800 hover:bg-blue-100 transition duration-300 ${activeSection === item.href.slice(1) ? 'bg-blue-100' : ''}`}
+                className={`block py-3 px-4 text-gray-800 hover:bg-blue-100 transition font-lato duration-300 ${activeSection === item.href.slice(1) ? 'bg-blue-100' : ''}`}
                 onClick={() => setIsOpen(false)}
                 whileHover={{ x: 5, backgroundColor: '#EBF8FF' }}
                 variants={menuItemVariants}

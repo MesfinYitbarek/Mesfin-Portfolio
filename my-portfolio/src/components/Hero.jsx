@@ -10,17 +10,12 @@ const Hero = () => {
     visible: { opacity: 1, y: 0 }
   };
 
-  const professionVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
-  };
-
   const techIcons = [FaReact, FaNodeJs, SiMongodb, SiExpress, SiJavascript, SiHtml5, SiCss3, FaDatabase, FaCode];
 
   return (
-    <section id="home" className="bg-gradient-to-br from-indigo-900 via-blue-900 to-purple-900 text-white py-32 relative overflow-hidden min-h-screen flex items-center">
-      <div className="absolute inset-0">
-        {[...Array(30)].map((_, i) => (
+    <section id="home" className="bg-gradient-to-br from-indigo-900 via-blue-900 to-purple-900 text-white py-16 sm:pl-10 relative overflow-hidden min-h-screen flex items-center justify-center">
+      <div className="absolute inset-0 sm:w-[60%] top-[500px]  sm:top-10 sm:left-[600px] ">
+        {[...Array(50)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute text-blue-200 opacity-10"
@@ -43,116 +38,123 @@ const Hero = () => {
           </motion.div>
         ))}
       </div>
-      <div className="container mx-auto px-6 text-center relative z-10">
+      <div className="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center justify-center">
         <motion.div
-          initial={{ scale: 0, rotate: -180 }}
-          animate={{ scale: 1, rotate: 0 }}
-          transition={{ type: 'spring', stiffness: 260, damping: 20 }}
-          className="relative inline-block mb-8"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+          className="md:w-1/2 mb-8 md:mb-0 text-center md:text-left   bg-opacity-100 p-8 rounded-lg"
         >
-          <img
-            src="../../public/20231010_114912.jpg"
-            alt="Mesfin Yitbarek"
-            className="w-48 h-48 rounded-full mx-auto border-4 border-white shadow-lg"
-          />
+          <motion.h1
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.4, type: 'spring', stiffness: 100 }}
+            className="text-4xl md:text-5xl font-extrabold mb-4 text-shadow-lg font-lato"
+          >
+            Mesfin Yitbarek
+          </motion.h1>
+          <motion.p
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.6, type: 'spring', stiffness: 100 }}
+            className="text-xl md:text-2xl mb-6 text-blue-100 font-lato"
+          >
+            Full Stack Developer | MERN Stack Specialist
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+            className="text-lg mb-8 text-blue-200"
+          >
+            Passionate about creating innovative web solutions using cutting-edge technologies.
+            With expertise in the MERN stack, I specialize in building responsive, user-friendly
+            applications that solve real-world problems.
+          </motion.p>
           <motion.div
-            className="absolute inset-0 rounded-full"
-            animate={{
-              boxShadow: [
-                '0 0 0 0px rgba(255,255,255,0.4)',
-                '0 0 0 20px rgba(255,255,255,0)'
-              ]
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 1.5,
-              ease: 'easeInOut'
-            }}
-          />
-        </motion.div>
-        <motion.h1
-          initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, type: 'spring', stiffness: 100 }}
-          className="text-5xl font-extrabold mb-4 text-shadow-lg font-sans"
-        >
-          Mesfin Yitbarek
-        </motion.h1>
-        <motion.p
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.4, type: 'spring', stiffness: 100 }}
-          className="text-2xl mb-8 text-blue-100"
-        >
-          Full Stack Developer | MERN Stack Specialist
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-        >
-          <motion.a
-            href="#contact"
-            className="bg-white text-indigo-900 px-10 py-3 rounded-full font-bold text-xl hover:bg-blue-100 transition duration-300 shadow-lg inline-block"
-            whileHover={{ scale: 1.05, boxShadow: '0 0 15px rgba(255,255,255,0.5)' }}
-            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1 }}
+            className="flex space-x-4 justify-center md:justify-start"
           >
-            Get In Touch
-          </motion.a>
+            <motion.a
+              href="#contact"
+              className="bg-white text-indigo-900 px-6 py-2 rounded-full font-bold text-lg hover:bg-blue-100 transition duration-300 shadow-lg inline-block"
+              whileHover={{ scale: 1.05, boxShadow: '0 0 15px rgba(255,255,255,0.5)' }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Get In Touch
+            </motion.a>
+            <motion.a
+              href="#projects"
+              className="border-2 border-white text-white px-6 py-2 rounded-full font-bold text-lg hover:bg-white hover:text-indigo-900 transition duration-300 shadow-lg inline-block"
+              whileHover={{ scale: 1.05, boxShadow: '0 0 15px rgba(255,255,255,0.5)' }}
+              whileTap={{ scale: 0.95 }}
+            >
+              View Projects
+            </motion.a>
+          </motion.div>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-          className="mt-12 flex justify-center space-x-8"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+          className="md:w-1/2 flex flex-col items-center"
         >
-          <motion.a
-            href="https://github.com/MesfinYitbarek"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-blue-300 bg-white bg-opacity-20 p-4 rounded-full"
-            whileHover={{ scale: 1.2, rotate: 360, backgroundColor: 'rgba(255,255,255,0.3)' }}
-            whileTap={{ scale: 0.8 }}
-            transition={{ type: 'spring', stiffness: 300 }}
+          <motion.div
+            initial={{ scale: 0, rotate: -180 }}
+            animate={{ scale: 1, rotate: 0 }}
+            transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+            className="relative inline-block mb-8"
           >
-            <FaGithub size={28} />
-          </motion.a>
-          <motion.a
-            href="https://et.linkedin.com/in/mesfin-yitbarek-739550287"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-blue-300 bg-white bg-opacity-20 p-4 rounded-full"
-            whileHover={{ scale: 1.2, rotate: 360, backgroundColor: 'rgba(255,255,255,0.3)' }}
-            whileTap={{ scale: 0.8 }}
-            transition={{ type: 'spring', stiffness: 300 }}
+            <img
+              src="../../public/20231010_114912.jpg"
+              alt="Mesfin Yitbarek"
+              className="w-48 h-48 rounded-full border-4 border-white shadow-lg"
+            />
+            <motion.div
+              className="absolute inset-0 rounded-full"
+              animate={{
+                boxShadow: [
+                  '0 0 0 0px rgba(255,255,255,0.4)',
+                  '0 0 0 20px rgba(255,255,255,0)'
+                ]
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 1.5,
+                ease: 'easeInOut'
+              }}
+            />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2 }}
+            className="flex justify-center space-x-6"
           >
-            <FaLinkedin size={28} />
-          </motion.a>
-          <motion.a
-            href="https://x.com/MesfinYitb65337?t=U5nJQy6l3063eJS-wmKjjg&s=35"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-blue-300 bg-white bg-opacity-20 p-4 rounded-full"
-            whileHover={{ scale: 1.2, rotate: 360, backgroundColor: 'rgba(255,255,255,0.3)' }}
-            whileTap={{ scale: 0.8 }}
-            transition={{ type: 'spring', stiffness: 300 }}
-          >
-            <FaXTwitter size={28} />
-          </motion.a>
+            <SocialIcon href="https://github.com/MesfinYitbarek" icon={FaGithub} />
+            <SocialIcon href="https://et.linkedin.com/in/mesfin-yitbarek-739550287" icon={FaLinkedin} />
+            <SocialIcon href="https://x.com/MesfinYitb65337?t=U5nJQy6l3063eJS-wmKjjg&s=35" icon={FaXTwitter} />
+          </motion.div>
         </motion.div>
       </div>
-      <style jsx>{`
-        @keyframes slide-down {
-          0%, 50% { transform: translateY(0); }
-          50%, 100% { transform: translateY(100%); }
-        }
-        @keyframes slide-up {
-          0%, 50% { transform: translateY(0); }
-          50%, 100% { transform: translateY(-100%); }
-        }
-      `}</style>
     </section>
   );
 };
+
+const SocialIcon = ({ href, icon: Icon }) => (
+  <motion.a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-white hover:text-blue-300 bg-white bg-opacity-20 p-3 rounded-full"
+    whileHover={{ scale: 1.2, rotate: 360, backgroundColor: 'rgba(255,255,255,0.3)' }}
+    whileTap={{ scale: 0.8 }}
+    transition={{ type: 'spring', stiffness: 300 }}
+  >
+    <Icon size={24} />
+  </motion.a>
+);
 
 export default Hero;
