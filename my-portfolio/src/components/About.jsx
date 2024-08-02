@@ -20,7 +20,7 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-blue-50 to-white">
+    <section id="about" className="py-20 bg-gradient-to-b font-l from-blue-50 to-white">
       <div className="container mx-auto px-6">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}

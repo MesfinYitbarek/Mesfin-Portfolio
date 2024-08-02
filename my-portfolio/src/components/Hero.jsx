@@ -131,9 +131,9 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2 }}
-            className="flex justify-center space-x-6"
+            className="flex justify-center opacity-10 space-x-6"
           >
-            <SocialIcon href="https://github.com/MesfinYitbarek" icon={FaGithub} />
+            <SocialIcon href="https://github.com/MesfinYitbarek" icon={FaGithub}  />
             <SocialIcon href="https://et.linkedin.com/in/mesfin-yitbarek-739550287" icon={FaLinkedin} />
             <SocialIcon href="https://x.com/MesfinYitb65337?t=U5nJQy6l3063eJS-wmKjjg&s=35" icon={FaXTwitter} />
           </motion.div>

@@ -56,7 +56,7 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="bg-gradient-to-b from-gray-100 to-white py-20">
+    <section id="skills" className=" font-lato bg-gradient-to-b from-gray-100 to-white py-20">
       <div className="container mx-auto px-6">
         <motion.h2
           initial={{ opacity: 0, y: -50 }}
