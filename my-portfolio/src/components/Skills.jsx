@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaJs, FaReact, FaNodeJs, FaDatabase, FaHtml5, FaCss3, FaJava, FaPhp } from 'react-icons/fa';
-import { SiExpress, SiMongodb, SiTailwindcss, SiRedux, SiTypescript, SiGraphql, SiMysql, SiFirebase } from 'react-icons/si';
+import { SiExpress, SiMongodb, SiTailwindcss, SiRedux,SiNextdotjs,SiPostgresql, SiTypescript, SiGraphql, SiMysql, SiFirebase } from 'react-icons/si';
 
 const skillCategories = {
   'Frontend': [
@@ -12,6 +12,7 @@ const skillCategories = {
     { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#06B6D4' },
     { name: 'Redux', icon: SiRedux, color: '#764ABC' },
     { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
+    { nae: 'Next.Js', icon: SiNextdotjs, color: '#3178C6' },
   ],
   'Backend': [
     { name: 'Node.js', icon: FaNodeJs, color: '#339933' },
@@ -21,6 +22,7 @@ const skillCategories = {
   ],
   'Database': [
     { name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
+    { name: 'Postgresql', icon: SiPostgresql, color: '#4479A1' },
     { name: 'MySQL', icon: SiMysql, color: '#4479A1' },
     { name: 'Firebase', icon: SiFirebase, color: '#FFCA28' },
   ],

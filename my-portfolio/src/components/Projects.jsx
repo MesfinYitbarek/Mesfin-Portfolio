@@ -4,18 +4,18 @@ import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from 'reac
 
 const projects = [
   {
-    title: "E-commerce Platform",
+    title: "Lancet Consultancy",
     description: "A full-stack e-commerce solution built with the MERN stack.",
-    image: "../../public/shoper-slLo94wES2M-unsplash.jpg",
+    image: "/lancet.png",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Redux"],
     github: "#",
     live: "#",
     color: "#3B82F6" // Blue
   },
   {
-    title: "Task Management App",
+    title: "SkillUp E-learning Platform",
     description: "A real-time task management application with user authentication.",
-    image: "../../public/pexels-george-dolgikh-551816-1326947.jpg",
+    image: "/skillup.png",
     technologies: ["React", "Firebase", "Material-UI"],
     github: "#",
     live: "#",
@@ -24,7 +24,7 @@ const projects = [
   {
     title: "Weather Dashboard",
     description: "A weather forecasting app integrating with external APIs.",
-    image: "../../public/pexels-artempodrez-4492127.jpg",
+    image: "/pexels-artempodrez-4492127.jpg",
     technologies: ["React", "OpenWeather API", "Chart.js"],
     github: "#",
     live: "#",

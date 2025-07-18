@@ -108,7 +108,7 @@ const Hero = () => {
             className="relative inline-block mb-8"
           >
             <img
-              src="../../public/20231010_114912.jpg"
+              src="/20231010_114912.jpg"
               alt="Mesfin Yitbarek"
               className="w-48 h-48 rounded-full border-4 border-white shadow-lg"
             />
