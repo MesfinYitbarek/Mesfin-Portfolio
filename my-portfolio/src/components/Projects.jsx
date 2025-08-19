@@ -1,31 +1,40 @@
-import React, { useState, useRef, useEffect } from 'react';
+import  { useState, useRef} from 'react';
 import { motion, AnimatePresence, useMotionValue, useTransform } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const projects = [
   {
     title: "Lancet Consultancy",
-    description: "A full-stack e-commerce solution built with the MERN stack.",
+    description: "A medical website designed to provide professional healthcare consultancy. It connects patients with medical experts, offering reliable advice, appointments, and health information in a user-friendly platform.",
     image: "/lancet.png",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Redux"],
     github: "#",
-    live: "#",
-    color: "#3B82F6" // Blue
+    live: "http://lancet.onrender.com/",
+    color: "#3B82F6"
   },
   {
     title: "SkillUp E-learning Platform",
-    description: "A real-time task management application with user authentication.",
+    description: "Developed a web-based platform enabling students to access courses, track progress, and interact with learning materials in an engaging and user-friendly environment.",
     image: "/skillup.png",
     technologies: ["React", "Firebase", "Material-UI"],
     github: "#",
-    live: "#",
-    color: "#10B981" // Green
+    live: "https://fcse.onrender.com/",
+    color: "#10B981" 
   },
   {
-    title: "Weather Dashboard",
-    description: "A weather forecasting app integrating with external APIs.",
+    title: "LotteryBingo Web App",
+    description: "Designed and implemented an online bingo game with sales tracking and an admin dashboard for managing users, transactions, and gameplay",
     image: "/pexels-artempodrez-4492127.jpg",
     technologies: ["React", "OpenWeather API", "Chart.js"],
+    github: "#",
+    live: "#",
+    color: "#F59E0B" 
+  },
+  {
+    title: "Course Offering System for Arba Minch University",
+    description: "Built for Arba Minch University with both automatic and manual course assignment, data management, announcements, and complaint handling, improving efficiency in academic operations.",
+    image: "/pexels-artempodrez-4492127.jpg",
+    technologies: ["React", "Node.js", "Express", "MongoDB", "Redux", "TailwindCSS"],
     github: "#",
     live: "#",
     color: "#F59E0B" // Yellow
@@ -153,15 +162,7 @@ const Projects = () => {
               {projects[currentProject].title}
             </h3>
             <p className="text-lg mb-6 text-gray-600">{projects[currentProject].description}</p>
-            <div className="flex gap-4 mb-8">
-              <motion.a 
-                href={projects[currentProject].github} 
-                className="bg-gray-200 text-gray-800 px-6 py-3 rounded-full flex items-center"
-                whileHover={{ scale: 1.05, backgroundColor: projects[currentProject].color, color: "white" }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <FaGithub className="mr-2" /> GitHub
-              </motion.a>
+            <div className="flex gap-4 mb-8">              
               <motion.a 
                 href={projects[currentProject].live} 
                 className="bg-gray-200 text-gray-800 px-6 py-3 rounded-full flex items-center"

@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaReact, FaNodeJs, FaDatabase, FaCode } from 'react-icons/fa';
 import { SiMongodb, SiExpress, SiJavascript, SiHtml5, SiCss3 } from 'react-icons/si';
-import { FaXTwitter } from 'react-icons/fa6';
+
 
 const Hero = () => {
   const particleVariants = {
@@ -67,9 +67,7 @@ const Hero = () => {
             transition={{ delay: 0.8 }}
             className="text-lg mb-8 text-blue-200"
           >
-            Passionate about creating innovative web solutions using cutting-edge technologies.
-            With expertise in the MERN stack, I specialize in building responsive, user-friendly
-            applications that solve real-world problems.
+            Full Stack Developer passionate about creating scalable, user-friendly web applications. I turn ideas into impactful digital solutions with clean code and modern design.
           </motion.p>
           <motion.div
             initial={{ opacity: 0 }}
@@ -134,8 +132,7 @@ const Hero = () => {
             className="flex justify-center opacity-10 space-x-6"
           >
             <SocialIcon href="https://github.com/MesfinYitbarek" icon={FaGithub}  />
-            <SocialIcon href="https://et.linkedin.com/in/mesfin-yitbarek-739550287" icon={FaLinkedin} />
-            <SocialIcon href="https://x.com/MesfinYitb65337?t=U5nJQy6l3063eJS-wmKjjg&s=35" icon={FaXTwitter} />
+            <SocialIcon href="https://et.linkedin.com/in/mesfin-yitbarek" icon={FaLinkedin} />           
           </motion.div>
         </motion.div>
       </div>

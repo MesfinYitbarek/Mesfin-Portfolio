@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaJs, FaReact, FaNodeJs, FaDatabase, FaHtml5, FaCss3, FaJava, FaPhp } from 'react-icons/fa';
-import { SiExpress, SiMongodb, SiTailwindcss, SiRedux,SiNextdotjs,SiPostgresql, SiTypescript, SiGraphql, SiMysql, SiFirebase } from 'react-icons/si';
+import { FaJs, FaReact, FaNodeJs, FaHtml5, FaCss3, FaJava, FaPhp } from 'react-icons/fa';
+import { SiExpress, SiMongodb, SiTailwindcss, SiRedux,SiNextdotjs,SiPostgresql, SiTypescript,SiMysql, SiFirebase, SiGit, SiPostman } from 'react-icons/si';
 
 const skillCategories = {
   'Frontend': [
@@ -12,7 +12,7 @@ const skillCategories = {
     { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#06B6D4' },
     { name: 'Redux', icon: SiRedux, color: '#764ABC' },
     { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
-    { nae: 'Next.Js', icon: SiNextdotjs, color: '#3178C6' },
+    { name: 'Next.Js', icon: SiNextdotjs, color: '#3178C6' },
   ],
   'Backend': [
     { name: 'Node.js', icon: FaNodeJs, color: '#339933' },
@@ -27,7 +27,8 @@ const skillCategories = {
     { name: 'Firebase', icon: SiFirebase, color: '#FFCA28' },
   ],
   'Other': [
-    { name: 'GraphQL', icon: SiGraphql, color: '#E10098' },
+    { name: 'Git', icon: SiGit, color: '#E34F26' },
+    { name: 'Postman', icon: SiPostman, color: '#E34F26' },
   ],
 };
 
