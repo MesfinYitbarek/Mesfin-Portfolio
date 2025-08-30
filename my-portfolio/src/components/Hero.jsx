@@ -59,7 +59,7 @@ const Hero = () => {
             transition={{ delay: 0.6, type: 'spring', stiffness: 100 }}
             className="text-xl md:text-2xl mb-6 text-blue-100 font-lato"
           >
-            Full Stack Developer | MERN Stack Specialist
+            Software Engineer | Passionate about Full-Stack Development, 5G, Cloud, AI, and Big Data
           </motion.p>
           <motion.p
             initial={{ opacity: 0 }}
@@ -67,7 +67,7 @@ const Hero = () => {
             transition={{ delay: 0.8 }}
             className="text-lg mb-8 text-blue-200"
           >
-            Full Stack Developer passionate about creating scalable, user-friendly web applications. I turn ideas into impactful digital solutions with clean code and modern design.
+            Motivated and results-driven software engineer with top academic performance (3.92 GPA), certified through Huawei’s Seeds for the Future program. Experienced in full-stack development, Agile practices, and working with Product Owners and Scrum Masters to deliver impactful solutions.
           </motion.p>
           <motion.div
             initial={{ opacity: 0 }}
